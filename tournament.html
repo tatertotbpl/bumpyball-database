@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bumpyball Database</title>
+  <style>
+    /* Basic header styling */
+    body { margin: 0; font-family: Arial, sans-serif; }
+    nav {
+      background-color: #333;
+      overflow: hidden;
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav ul li a {
+      display: block;
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav ul li a:hover {
+      background-color: #111;
+    }
+
+    /* Dropdown menu */
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      min-width: 160px;
+      z-index: 1;
+    }
+    nav ul li ul li a {
+      padding: 12px 16px;
+    }
+    nav ul li:hover ul {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li>
+        <a href="#">Tournaments</a>
+        <ul>
+          <li><a href="#">2023</a></li>
+          <li><a href="#">2024</a></li>
+          <li><a href="#">Archive</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Stats</a>
+        <ul>
+          <li><a href="#">Players</a></li>
+          <li><a href="#">Teams</a></li>
+        </ul>
+      </li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+
+  <h1>Welcome to the Bumpyball Database</h1>
+  <p>This site will hold records of all past tournaments.</p>
+</body>
+</html>
