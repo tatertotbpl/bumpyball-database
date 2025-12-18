@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Bumpyball Database</title>
   <style>
-    /* Basic header styling */
     body { margin: 0; font-family: Arial, sans-serif; }
     nav {
       background-color: #333;
@@ -28,8 +27,7 @@
     nav ul li a:hover {
       background-color: #111;
     }
-
-    /* Dropdown menu */
+    /* Dropdown styling */
     nav ul li ul {
       display: none;
       position: absolute;
@@ -49,24 +47,29 @@
 </head>
 <body>
   <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <!-- Direct tournament links -->
+      <li><a href="tournament.html?id=2024-spring-invitational">Spring Invitational 2024</a></li>
+      <li><a href="tournament.html?id=2024-summer-classic">Summer Classic 2024</a></li>
+      <!-- Dropdown for recurring event -->
       <li>
-        <a href="#">Tournaments</a>
+        <a href="#">World Cup</a>
         <ul>
-          <li><a href="#">2023</a></li>
-          <li><a href="#">2024</a></li>
-          <li><a href="#">Archive</a></li>
+          <li><a href="tournament.html?id=worldcup-2021">2021</a></li>
+          <li><a href="tournament.html?id=worldcup-2022">2022</a></li>
+          <li><a href="tournament.html?id=worldcup-2023">2023</a></li>
         </ul>
       </li>
+      <!-- Dropdown for stats -->
       <li>
-        <a href="#">Stats</a>
+        <a href="#">Past Winners</a>
         <ul>
-          <li><a href="#">Players</a></li>
-          <li><a href="#">Teams</a></li>
+          <li><a href="winners.html?type=worldcup">World Cup</a></li>
+          <li><a href="winners.html?type=spring">Spring Invitational</a></li>
         </ul>
       </li>
-      <li><a href="#">About</a></li>
     </ul>
   </nav>
 
