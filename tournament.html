@@ -4,93 +4,22 @@
   <meta charset="UTF-8">
   <title>Tournament</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-    }
-
-    nav {
-      background-color: #333;
-      overflow: hidden;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-
-    nav ul li {
-      position: relative;
-    }
-
-    nav ul li a {
-      display: block;
-      color: white;
-      padding: 14px 20px;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    nav ul li a:hover {
-      background-color: #111;
-    }
-
-    nav ul li ul {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #333;
-      min-width: 180px;
-      z-index: 10;
-      flex-direction: column;
-    }
-
-    nav ul li:hover ul {
-      display: block;
-    }
-
-    .container {
-      padding: 40px;
-    }
-
-    h1 {
-      font-size: 32px;
-      color: #222;
-    }
-
-    #content {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      margin-top: 20px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 800px;
-      border: none;
-      margin-top: 20px;
-    }
-  </style>
+  <!-- ✅ External stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- NAVIGATION BAR -->
+  <!-- ✅ NAVIGATION BAR -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
 
+      <!-- WORLD CUP -->
       <li><a href="tournament.html?id=wc">World Cup</a></li>
 
+      <!-- ✅ OLYMPICS DROPDOWN -->
       <li>
         <a href="#">Olympics</a>
         <ul>
@@ -101,6 +30,7 @@
         </ul>
       </li>
 
+      <!-- OTHER TOURNAMENTS -->
       <li><a href="tournament.html?id=bpl">Bumpy Premier League</a></li>
       <li><a href="tournament.html?id=tlwn">The Lone Wolf Night</a></li>
       <li><a href="tournament.html?id=2v2cup">2v2 Cup</a></li>
@@ -110,17 +40,18 @@
     </ul>
   </nav>
 
+  <!-- ✅ MAIN CONTENT -->
   <div class="container">
     <h1 id="title">Loading...</h1>
     <div id="content">Please wait while we load the tournament data.</div>
   </div>
 
   <script>
-    // Read ID from URL
+    // ✅ Read ID from URL
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
 
-    // Load tournaments.json
+    // ✅ Load tournaments.json
     fetch("tournaments.json")
       .then(response => response.json())
       .then(data => {
@@ -132,17 +63,17 @@
           return;
         }
 
-        // Set page title
+        // ✅ Set page title
         document.getElementById("title").innerText = tournament.name;
 
         let html = "";
 
-        // Description (optional)
+        // ✅ Description (optional)
         if (tournament.description) {
           html += `<p>${tournament.description}</p>`;
         }
 
-        // If this tournament has sub-events (like Olympics)
+        // ✅ If this tournament has sub-events (like Olympics)
         if (tournament.events) {
           html += "<h2>Events</h2><ul>";
           tournament.events.forEach(ev => {
@@ -151,10 +82,9 @@
           html += "</ul>";
         }
 
-        // If this is an event with a spreadsheet + GID
+        // ✅ If this is an event with a spreadsheet + GID
         if (tournament.sheet && tournament.gid) {
-          const embedURL =
-            `${tournament.sheet}#gid=${tournament.gid}`;
+          const embedURL = `${tournament.sheet}#gid=${tournament.gid}`;
 
           html += `
             <h2>Event Data</h2>
