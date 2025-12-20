@@ -3,58 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <title>Bumpyball Database</title>
+
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    /* NAVBAR */
     nav {
       background-color: #333;
       overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
+
     nav ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
       display: flex;
     }
+
     nav ul li {
       position: relative;
     }
+
     nav ul li a {
       display: block;
       color: white;
       padding: 14px 20px;
       text-decoration: none;
+      white-space: nowrap;
     }
+
     nav ul li a:hover {
       background-color: #111;
     }
-    /* Dropdown styling (for later use) */
+
+    /* DROPDOWN */
     nav ul li ul {
       display: none;
       position: absolute;
       top: 100%;
       left: 0;
       background-color: #333;
-      min-width: 160px;
-      z-index: 1;
+      min-width: 180px;
+      z-index: 10;
+      flex-direction: column;
     }
+
     nav ul li ul li a {
       padding: 12px 16px;
     }
+
     nav ul li:hover ul {
       display: block;
     }
-    h1, p {
-      padding: 20px;
+
+    /* PAGE CONTENT */
+    .container {
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 36px;
+      color: #222;
+    }
+
+    p {
+      font-size: 18px;
+      color: #444;
     }
   </style>
 </head>
+
 <body>
+
+  <!-- NAVIGATION BAR -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
+
+      <!-- WORLD CUP -->
       <li><a href="tournament.html?id=wc">World Cup</a></li>
-      <li><a href="tournament.html?id=olympics">Olympics</a></li>
+
+      <!-- OLYMPICS DROPDOWN -->
+      <li>
+        <a href="#">Olympics</a>
+        <ul>
+          <li><a href="tournament.html?id=olympics-2020-medals">Medal Counts</a></li>
+          <li><a href="tournament.html?id=olympics-2020-1v1">1v1 Event</a></li>
+          <li><a href="tournament.html?id=olympics-2020-3v3">3v3 Event</a></li>
+          <li><a href="tournament.html?id=olympics-2020-history">Match History</a></li>
+        </ul>
+      </li>
+
+      <!-- OTHER TOURNAMENTS -->
       <li><a href="tournament.html?id=bpl">Bumpy Premier League</a></li>
       <li><a href="tournament.html?id=tlwn">The Lone Wolf Night</a></li>
       <li><a href="tournament.html?id=2v2cup">2v2 Cup</a></li>
@@ -64,8 +112,12 @@
     </ul>
   </nav>
 
-  <h1>Welcome to the Bumpyball Database</h1>
-  <p>This site will hold records of all past tournaments.</p>
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <h1>Welcome to the Bumpyball Database</h1>
+    <p>Your home for every tournament, league, and event in Bumpyball history.</p>
+  </div>
+
 </body>
 </html>
 
