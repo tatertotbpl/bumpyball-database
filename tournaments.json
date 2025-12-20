@@ -1,0 +1,91 @@
+{
+  "tournaments": [
+    {
+      "id": "wc",
+      "name": "World Cup",
+      "description": "The official Bumpyball World Cup tournament.",
+      "sheet": "PUT_WORLD_CUP_SPREADSHEET_URL_HERE",
+      "gid": "PUT_GID_HERE"
+    },
+
+    {
+      "id": "olympics",
+      "name": "Olympics 2020",
+      "description": "The only Bumpyball Olympics ever held.",
+      "events": [
+        {
+          "id": "olympics-2020-medals",
+          "name": "Medal Counts",
+          "sheet": "https://docs.google.com/spreadsheets/d/1zfbmCgSJ5UIySnGTNbPT_rrSreLn2S2fl4GOjFijYG4/edit",
+          "gid": "1536139710"
+        },
+        {
+          "id": "olympics-2020-1v1",
+          "name": "1v1 Event",
+          "sheet": "https://docs.google.com/spreadsheets/d/1zfbmCgSJ5UIySnGTNbPT_rrSreLn2S2fl4GOjFijYG4/edit",
+          "gid": "1571010668"
+        },
+        {
+          "id": "olympics-2020-3v3",
+          "name": "3v3 Event",
+          "sheet": "https://docs.google.com/spreadsheets/d/1zfbmCgSJ5UIySnGTNbPT_rrSreLn2S2fl4GOjFijYG4/edit",
+          "gid": "1852634755"
+        },
+        {
+          "id": "olympics-2020-history",
+          "name": "Match History",
+          "sheet": "https://docs.google.com/spreadsheets/d/1zfbmCgSJ5UIySnGTNbPT_rrSreLn2S2fl4GOjFijYG4/edit",
+          "gid": "991590693"
+        }
+      ]
+    },
+
+    {
+      "id": "bpl",
+      "name": "Bumpy Premier League",
+      "description": "The official BPL season.",
+      "sheet": "PUT_BPL_SPREADSHEET_URL_HERE",
+      "gid": "PUT_GID_HERE"
+    },
+
+    {
+      "id": "tlwn",
+      "name": "The Lone Wolf Night",
+      "description": "A special one‑night Bumpyball event.",
+      "sheet": "PUT_TLWN_SPREADSHEET_URL_HERE",
+      "gid": "PUT_GID_HERE"
+    },
+
+    {
+      "id": "2v2cup",
+      "name": "2v2 Cup",
+      "description": "A knockout cup for 2v2 teams.",
+      "sheet": "PUT_2V2_CUP_SPREADSHEET_URL_HERE",
+      "gid": "PUT_GID_HERE"
+    },
+
+    {
+      "id": "1v1knockout",
+      "name": "1v1 Knockout",
+      "description": "A single‑elimination 1v1 tournament.",
+      "sheet": "PUT_1V1_KO_SPREADSHEET_URL_HERE",
+      "gid": "PUT_GID_HERE"
+    },
+
+    {
+      "id": "1v1league",
+      "name": "1v1 League",
+      "description": "A full league season for 1v1 players.",
+      "sheet": "PUT_1V1_LEAGUE_SPREADSHEET_URL_HERE",
+      "gid": "PUT_GID_HERE"
+    },
+
+    {
+      "id": "2v2league",
+      "name": "2v2 League",
+      "description": "A full league season for 2v2 teams.",
+      "sheet": "PUT_2V2_LEAGUE_SPREADSHEET_URL_HERE",
+      "gid": "PUT_GID_HERE"
+    }
+  ]
+}
