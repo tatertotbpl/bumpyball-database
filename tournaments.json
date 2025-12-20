@@ -9,9 +9,9 @@
     },
 
     {
-      "id": "olympics",
+      "id": "olympics-2020",
       "name": "Olympics 2020",
-      "description": "The only Bumpyball Olympics ever held.",
+      "description": "The complete hub for all Olympics 2020 events.",
       "events": [
         {
           "id": "olympics-2020-medals",
@@ -51,7 +51,7 @@
     {
       "id": "tlwn",
       "name": "The Lone Wolf Night",
-      "description": "A special one‑night Bumpyball event.",
+      "description": "A special 1 time 1v1 tournament",
       "sheet": "PUT_TLWN_SPREADSHEET_URL_HERE",
       "gid": "PUT_GID_HERE"
     },
@@ -67,7 +67,7 @@
     {
       "id": "1v1knockout",
       "name": "1v1 Knockout",
-      "description": "A single‑elimination 1v1 tournament.",
+      "description": "A Knockout Tournament 1v1",
       "sheet": "PUT_1V1_KO_SPREADSHEET_URL_HERE",
       "gid": "PUT_GID_HERE"
     },
