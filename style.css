@@ -54,17 +54,8 @@ nav ul li ul {
   margin: 0;
 }
 
-nav ul li ul li {
-  width: 100%;
-}
-
-nav ul li ul li a {
-  padding: 12px 16px;
-  display: block;
-}
-
 nav ul li:hover > ul {
-  display: block;
+  display: block !important;
 }
 
 /* PAGE CONTENT */
