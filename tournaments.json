@@ -11,7 +11,7 @@
    {
   "id": "olympics-2020",
   "name": "Olympics 2020",
-  "description": "The complete hub for all Olympics 2020 events.",
+  "description": "The complete hub for all of the 2020 Olympic events, medals, and all the matches.",
   "events": [
     {
       "id": "olympics-2020-medals",
