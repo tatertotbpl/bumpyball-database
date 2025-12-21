@@ -8,38 +8,38 @@
       "gid": "PUT_GID_HERE"
     },
 
-   {
-  "id": "olympics-2020",
-  "name": "Olympics 2020",
-  "description": "The complete hub for all of the 2020 Olympic events, medals, and all the matches.",
-  "events": [
     {
-      "id": "olympics-2020-medals",
-      "name": "Medal Counts",
-      "sheet": "https://docs.google.com/spreadsheets/d/1zfbmCgSJ5UIySnGTNbPT_rrSreLn2S2fl4GOjFijYG4/edit",
-      "gid": "1536139710"
+      "id": "olympics-2020",
+      "name": "Olympics 2020",
+      "description": "The complete hub for all Olympics 2020 events.",
+      "summary": "1v1 Winner: TBD<br>3v3 Winner: TBD<br>Total Medals: TBD",
+      "events": [
+        {
+          "id": "olympics-2020-medals",
+          "name": "Medal Counts",
+          "sheet": "https://docs.google.com/spreadsheets/d/1zfbmCgSJ5UIySnGTNbPT_rrSreLn2S2fl4GOjFijYG4/edit",
+          "gid": "1536139710"
+        },
+        {
+          "id": "olympics-2020-1v1",
+          "name": "1v1 Event",
+          "sheet": "https://docs.google.com/spreadsheets/d/1zfbmCgSJ5UIySnGTNbPT_rrSreLn2S2fl4GOjFijYG4/edit",
+          "gid": "1571010668"
+        },
+        {
+          "id": "olympics-2020-3v3",
+          "name": "3v3 Event",
+          "sheet": "https://docs.google.com/spreadsheets/d/1zfbmCgSJ5UIySnGTNbPT_rrSreLn2S2fl4GOjFijYG4/edit",
+          "gid": "1852634755"
+        },
+        {
+          "id": "olympics-2020-history",
+          "name": "Match History",
+          "sheet": "https://docs.google.com/spreadsheets/d/1zfbmCgSJ5UIySnGTNbPT_rrSreLn2S2fl4GOjFijYG4/edit",
+          "gid": "991590693"
+        }
+      ]
     },
-    {
-      "id": "olympics-2020-1v1",
-      "name": "1v1 Event",
-      "sheet": "https://docs.google.com/spreadsheets/d/1zfbmCgSJ5UIySnGTNbPT_rrSreLn2S2fl4GOjFijYG4/edit",
-      "gid": "1571010668"
-    },
-    {
-      "id": "olympics-2020-3v3",
-      "name": "3v3 Event",
-      "sheet": "https://docs.google.com/spreadsheets/d/1zfbmCgSJ5UIySnGTNbPT_rrSreLn2S2fl4GOjFijYG4/edit",
-      "gid": "1852634755"
-    },
-    {
-      "id": "olympics-2020-history",
-      "name": "Match History",
-      "sheet": "https://docs.google.com/spreadsheets/d/1zfbmCgSJ5UIySnGTNbPT_rrSreLn2S2fl4GOjFijYG4/edit",
-      "gid": "991590693"
-    }
-  ]
-},
-
 
     {
       "id": "bpl",
@@ -90,3 +90,4 @@
     }
   ]
 }
+
