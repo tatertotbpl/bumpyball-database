@@ -32,44 +32,57 @@
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
 
-   fetch("tournaments.json", { cache: "no-store" })
-      .then(response => response.json())
-      .then(data => {
-        const tournament = data.tournaments.find(t => t.id === id);
+  fetch("./tournaments.json")
+  .then(response => response.json())
+  .then(data => {
+    let tournament = data.tournaments.find(t => t.id === id);
 
-        if (!tournament) {
-          document.getElementById("title").innerText = "Tournament Not Found";
-          document.getElementById("content").innerText = "No data exists for this tournament.";
-          return;
+    // If not found, search inside events
+    if (!tournament) {
+      for (const t of data.tournaments) {
+        if (t.events) {
+          const event = t.events.find(e => e.id === id);
+          if (event) {
+            tournament = event;
+            break;
+          }
         }
+      }
+    }
 
-        document.getElementById("title").innerText = tournament.name;
+    if (!tournament) {
+      document.getElementById("title").innerText = "Tournament Not Found";
+      document.getElementById("content").innerText = "No data exists for this tournament.";
+      return;
+    }
 
-        let html = "";
+    document.getElementById("title").innerText = tournament.name;
 
-        if (tournament.description) {
-          html += `<p>${tournament.description}</p>`;
-        }
+    let html = "";
 
-        if (tournament.summary) {
-          html += `<h2>Summary</h2><p>${tournament.summary}</p>`;
-        }
+    if (tournament.description) {
+      html += `<p>${tournament.description}</p>`;
+    }
 
-        if (tournament.events) {
-          html += "<h2>Events</h2><ul>";
-          tournament.events.forEach(ev => {
-            html += `<li><a href="tournament.html?id=${ev.id}">${ev.name}</a></li>`;
-          });
-          html += "</ul>";
-        }
+    if (tournament.summary) {
+      html += `<h2>Summary</h2><p>${tournament.summary}</p>`;
+    }
 
-        if (tournament.sheet && tournament.gid) {
-          const embedURL = `${tournament.sheet}#gid=${tournament.gid}`;
-          html += `<h2>Event Data</h2><iframe src="${embedURL}"></iframe>`;
-        }
-
-        document.getElementById("content").innerHTML = html;
+    if (tournament.events) {
+      html += "<h2>Events</h2><ul>";
+      tournament.events.forEach(ev => {
+        html += `<li><a href="tournament.html?id=${ev.id}">${ev.name}</a></li>`;
       });
+      html += "</ul>";
+    }
+
+    if (tournament.sheet && tournament.gid) {
+      const embedURL = `${tournament.sheet}#gid=${tournament.gid}`;
+      html += `<h2>Event Data</h2><iframe src="${embedURL}"></iframe>`;
+    }
+
+    document.getElementById("content").innerHTML = html;
+  });
   </script>
 
 </body>
