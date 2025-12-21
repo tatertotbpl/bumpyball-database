@@ -32,7 +32,7 @@
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
 
-  fetch("./tournaments.json")
+  fetch("./tournaments.json?v=" + Date.now())
   .then(response => response.json())
   .then(data => {
     let tournament = data.tournaments.find(t => t.id === id);
