@@ -3,23 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Tournament</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- NAVIGATION BAR -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-
       <li><a href="tournament.html?id=wc">World Cup</a></li>
-
-      <!-- ✅ Direct Olympics 2020 link -->
       <li><a href="tournament.html?id=olympics-2020">Olympics 2020</a></li>
-
       <li><a href="tournament.html?id=bpl">Bumpy Premier League</a></li>
       <li><a href="tournament.html?id=tlwn">The Lone Wolf Night</a></li>
       <li><a href="tournament.html?id=2v2cup">2v2 Cup</a></li>
@@ -29,18 +23,15 @@
     </ul>
   </nav>
 
-  <!-- MAIN CONTENT -->
   <div class="container">
     <h1 id="title">Loading...</h1>
     <div id="content">Please wait while we load the tournament data.</div>
   </div>
 
   <script>
-    // Read ID from URL
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
 
-    // Load tournaments.json
     fetch("tournaments.json")
       .then(response => response.json())
       .then(data => {
@@ -52,17 +43,18 @@
           return;
         }
 
-        // Set page title
         document.getElementById("title").innerText = tournament.name;
 
         let html = "";
 
-        // Description
         if (tournament.description) {
           html += `<p>${tournament.description}</p>`;
         }
 
-        // ✅ Hub page (like Olympics 2020)
+        if (tournament.summary) {
+          html += `<h2>Summary</h2><p>${tournament.summary}</p>`;
+        }
+
         if (tournament.events) {
           html += "<h2>Events</h2><ul>";
           tournament.events.forEach(ev => {
@@ -71,13 +63,9 @@
           html += "</ul>";
         }
 
-        // ✅ Event page (sheet + gid)
         if (tournament.sheet && tournament.gid) {
           const embedURL = `${tournament.sheet}#gid=${tournament.gid}`;
-          html += `
-            <h2>Event Data</h2>
-            <iframe src="${embedURL}"></iframe>
-          `;
+          html += `<h2>Event Data</h2><iframe src="${embedURL}"></iframe>`;
         }
 
         document.getElementById("content").innerHTML = html;
